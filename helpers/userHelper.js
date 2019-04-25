@@ -6,6 +6,13 @@ exports.getUsers = async (req, res) => {
   else res.status(200).send(users);
 };
 
+exports.getUser = async (req, res) => {
+  let user = await db.User.findById({ _id: req.params._id }, (err, result) => {
+    if (result) res.status(200).send(result);
+    else res.status(404).send("User with diven id not found");
+  });
+};
+
 exports.createUser = async (req, res) => {
   let newUser = new db.User(req.body);
   await newUser.save();

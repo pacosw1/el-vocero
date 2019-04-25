@@ -2,13 +2,13 @@ var mongoose = require("mongoose");
 //var categories = require("./category");
 var type = mongoose.Schema.Types;
 
-var cartSchema = new mongoose.Schema({
-  total: {
-    type: type.Number
-  },
-  items: []
+var categorySchema = new mongoose.Schema({
+  name: {
+    type: type.String,
+    required: "name is required"
+  }
 });
 
-var Cart = mongoose.model("Cart", cartSchema);
+var Category = mongoose.model("Category", categorySchema);
 
-module.exports = Cart;
+module.exports = Category;

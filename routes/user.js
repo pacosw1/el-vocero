@@ -11,6 +11,7 @@ router
 
 router
   .route("/:_id")
+  .get(helpers.getUser)
   .delete(helpers.deleteUser)
   .put(helpers.editUser);
 

@@ -28,10 +28,12 @@ app.listen(port, () => {
 let usersRoute = require("./routes/user");
 let adsRoute = require("./routes/ad");
 let imagesRoute = require("./routes/image");
+let categoryRoute = require("./routes/category");
 
 app.use("/users", usersRoute);
 app.use("/ads", adsRoute);
 app.use("/images", imagesRoute);
+app.use("/categories", categoryRoute);
 
 app.get("/", (req, res) => {
   res.send("Welcome to Online-Store API");

@@ -6,6 +6,13 @@ exports.getAds = async (req, res) => {
   else res.status(200).send(items);
 };
 
+exports.getAd = async (req, res) => {
+  let ad = await db.Ad.findById({ _id: req.params._id }, (err, result) => {
+    if (result) res.status(200).send(result);
+    else res.status(404).send("Ad with diven id not found");
+  });
+};
+
 exports.createAd = async (req, res) => {
   let newAd = new db.Ad(req.body);
   await newAd.save();

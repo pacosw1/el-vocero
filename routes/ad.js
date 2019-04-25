@@ -12,6 +12,7 @@ router
 
 router
   .route("/:_id")
+  .get(helpers.getAd)
   .delete(helpers.deleteAd)
   .put(helpers.editAd);
 
