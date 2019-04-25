@@ -29,11 +29,13 @@ let usersRoute = require("./routes/user");
 let adsRoute = require("./routes/ad");
 let imagesRoute = require("./routes/image");
 let categoryRoute = require("./routes/category");
+let favoriteRoute = require("./routes/favorite");
 
 app.use("/users", usersRoute);
 app.use("/ads", adsRoute);
 app.use("/images", imagesRoute);
 app.use("/categories", categoryRoute);
+app.use("/favorites", favoriteRoute);
 
 app.get("/", (req, res) => {
   res.send("Welcome to Online-Store API");

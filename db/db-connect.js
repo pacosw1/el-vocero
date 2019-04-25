@@ -15,3 +15,4 @@ module.exports.User = require("./models/user");
 module.exports.Category = require("./models/category");
 module.exports.Ad = require("./models/ad");
 module.exports.Image = require("./models/image");
+module.exports.Favorite = require("./models/favorite");
