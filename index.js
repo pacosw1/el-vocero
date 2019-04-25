@@ -26,11 +26,11 @@ app.listen(port, () => {
 });
 
 let usersRoute = require("./routes/user");
-let productsRoute = require("./routes/product");
+let adsRoute = require("./routes/ad");
 let imagesRoute = require("./routes/image");
 
 app.use("/users", usersRoute);
-app.use("/products", productsRoute);
+app.use("/ads", adsRoute);
 app.use("/images", imagesRoute);
 
 app.get("/", (req, res) => {

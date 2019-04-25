@@ -13,5 +13,5 @@ mongoose.Promise = Promise;
 
 module.exports.User = require("./models/user");
 // module.exports.Category = require("./category");
-module.exports.Product = require("./models/products");
-module.exports.Image = require("./models/images");
+module.exports.Ad = require("./models/ad");
+module.exports.Image = require("./models/image");
