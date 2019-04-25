@@ -38,5 +38,5 @@ app.use("/categories", categoryRoute);
 app.use("/favorites", favoriteRoute);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Online-Store API");
+  res.send("El_Vocero_Api 1.0.0");
 });
