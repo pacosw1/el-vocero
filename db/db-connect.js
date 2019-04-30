@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.set("useCreateIndex", true);
+require("dotenv");
 mongoose.connect(
   process.env.DB,
   {
