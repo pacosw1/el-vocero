@@ -4,12 +4,10 @@ mongoose.set("useCreateIndex", true);
 mongoose.connect(
   process.env.vocero_db,
   {
+    dbName: "el-vocero",
     useNewUrlParser: true
   },
-  (err, res) => {
-    if (err) console.log(err);
-    else console.log(res);
-  }
+  () => console.log("connected to " + process.env.vocero_db)
 );
 
 mongoose.Promise = Promise;
