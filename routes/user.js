@@ -15,4 +15,7 @@ router
   .delete(helpers.deleteUser)
   .put(helpers.editUser);
 
+router.route("/email/:email").get(helpers.checkEmail);
+router.route("/username/:username").get(helpers.checkUsername);
+
 module.exports = router;

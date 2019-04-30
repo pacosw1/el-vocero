@@ -21,10 +21,10 @@ exports.saveImage = async (req, res, next) => {
 exports.getImages = async (req, res) => {
   let { adId } = req.params;
 
-  await db.Image.find({ itemId: AdId }, (err, result) => {
-    if (images.length < 1) res.status(404).send("No Images found");
+  await db.Image.find({ adId: adId }, (err, result) => {
+    if (result.length < 1) res.status(404).send("No Images found");
     else {
-      images = images.map(image => image.path);
+      result = result.map(image => image.path);
       res.send(result);
     }
   });

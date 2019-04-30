@@ -1,11 +1,14 @@
 var mongoose = require("mongoose");
-//var categories = require("./category");
+var users = require("./user");
 var type = mongoose.Schema.Types;
 
 var adSchema = new mongoose.Schema({
-  userId: {
-    type: type.String,
-    required: "a model is required"
+  user: {
+    _id: type.ObjectId,
+    email: type.String,
+    username: type.String,
+    phoneNumber: type.String,
+    location: type.String
   },
   title: {
     type: type.String,
@@ -19,17 +22,9 @@ var adSchema = new mongoose.Schema({
     type: type.Number,
     required: "A price is required"
   },
-  imagePath: {
-    type: type.String,
-    required: "An preview image path `imagePath` is required"
-  },
   active: {
     type: type.Boolean,
     required: "Must Include active "
-  },
-  status: {
-    type: type.String,
-    required: "Must include status"
   }
 });
 

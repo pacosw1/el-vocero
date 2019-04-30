@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 //var categories = require("./category");
 var type = mongoose.Schema.Types;
+jwt = require("jsonwebtoken");
 
 var userSchema = new mongoose.Schema({
   email: {
@@ -24,6 +25,21 @@ var userSchema = new mongoose.Schema({
     require: "A phone number is required"
   }
 });
+userSchema.methods.generateToken = function() {
+  console.log(process.env.SALT);
+  let token = jwt.sign(
+    {
+      _id: this._id,
+      username: this.username,
+      location: this.location,
+      email: this.email,
+      phoneNumber: this.phoneNumber
+    },
+    process.env.SALT
+  );
+  return token;
+  //res.header("token", token ).send(token);
+};
 
 var User = mongoose.model("User", userSchema);
 

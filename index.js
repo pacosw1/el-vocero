@@ -1,7 +1,10 @@
 let express = require("express");
-let app = express();
+require("dotenv").config({ path: "./secret.env" });
 var cors = require("cors");
 var multer = require("multer");
+
+let app = express();
+
 app.use("/uploads", express.static(__dirname + "/uploads"));
 exports.storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -30,12 +33,19 @@ let adsRoute = require("./routes/ad");
 let imagesRoute = require("./routes/image");
 let categoryRoute = require("./routes/category");
 let favoriteRoute = require("./routes/favorite");
+let locationRoute = require("./routes/location");
+let messageRoute = require("./routes/message");
+let authRoute = require("./routes/auth");
 
 app.use("/users", usersRoute);
 app.use("/ads", adsRoute);
 app.use("/images", imagesRoute);
 app.use("/categories", categoryRoute);
 app.use("/favorites", favoriteRoute);
+app.use("/locations", locationRoute);
+app.use("/auth", authRoute);
+
+// app.use("/messages", messageRoute);
 
 app.get("/", (req, res) => {
   res.send("El_Vocero_Api 1.0.0");
