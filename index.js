@@ -16,7 +16,7 @@ exports.storage = multer.diskStorage({
   }
 });
 
-let port = process.env.port || 3001;
+let port = process.env.PORT || 8080;
 let bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
