@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.set("useCreateIndex", true);
 mongoose.connect(
-  "mongodb://localhost/el-vocero",
+  process.env.DB,
   {
     useNewUrlParser: true
   },
