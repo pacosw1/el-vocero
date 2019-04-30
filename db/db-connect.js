@@ -6,7 +6,10 @@ mongoose.connect(
   {
     useNewUrlParser: true
   },
-  () => console.log("connected to mongodb")
+  (err, res) => {
+    if (err) console.log(err);
+    else console.log(res);
+  }
 );
 
 mongoose.Promise = Promise;
