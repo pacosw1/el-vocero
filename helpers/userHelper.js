@@ -43,6 +43,8 @@ exports.createUser = async (req, res) => {
   if (emailExists) return res.status(400).send("Email already exists");
   if (usernameExists) return res.status(400).send("Username already exists");
 
+  if (password == "" || username == "" || email == "")
+    res.send({ status: 0, message: "Complete all fields " });
   let user = {
     email: email,
     username: username

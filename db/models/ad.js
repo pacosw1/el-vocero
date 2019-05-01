@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var users = require("./user");
+var category = require("./category");
 var type = mongoose.Schema.Types;
 
 var adSchema = new mongoose.Schema({
@@ -22,6 +23,7 @@ var adSchema = new mongoose.Schema({
     type: type.Number,
     required: "A price is required"
   },
+  category: category.schema,
   active: {
     type: type.Boolean,
     required: "Must Include active "
