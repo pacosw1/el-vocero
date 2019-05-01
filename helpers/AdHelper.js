@@ -2,7 +2,7 @@ let db = require("../db/db-connect");
 let _ = require("lodash");
 exports.getAds = async (req, res) => {
   let items = await db.Ad.find();
-  if (items.length < 1) res.status(404).send("No items found");
+  if (items.length < 1) res.send([]);
   else res.status(200).send(items);
 };
 
