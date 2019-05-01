@@ -17,7 +17,7 @@ exports.saveImage = async (req, res, next) => {
   res.send(await newImage.save());
   next();
 };
-
+//edit
 exports.getImages = async (req, res) => {
   let { adId } = req.params;
 
