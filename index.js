@@ -4,6 +4,7 @@ var cors = require("cors");
 var multer = require("multer");
 
 let app = express();
+app.use(cors());
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
 exports.storage = multer.diskStorage({
@@ -21,8 +22,6 @@ let bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 require("express-async-errors");
-
-app.use(cors({ origin: "https://el-vocero-front.herokuapp.com/" }));
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
