@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 require("express-async-errors");
 
-app.use(cors({ origin: "https://safe-wave-52393.herokuapp.com" }));
+app.use(cors({ origin: "https://el-vocero-front.herokuapp.com/" }));
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
