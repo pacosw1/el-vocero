@@ -9,6 +9,8 @@ const auth = async (req, res) => {
 
   console.log(req.body);
   let user = await db.findOne({ username: username });
+  console.log(user);
+  if (!user) res.send("no");
 
   //input validation
   if (!username || !password)
