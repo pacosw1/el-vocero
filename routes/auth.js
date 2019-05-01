@@ -7,6 +7,7 @@ require("dotenv");
 const auth = async (req, res) => {
   let { username, password } = req.body;
 
+  console.log(req.body);
   let user = await db.findOne({ username: username });
 
   //input validation
