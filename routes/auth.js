@@ -15,7 +15,7 @@ const auth = async (req, res) => {
   //input validation
   if (!username || !password)
     return res.send({ status: 0, message: "invalid username or password" });
-
+  //wtf
   //verify password
   let validPassword = await bcrypt.compare(password, user.password);
   console.log(validPassword);
