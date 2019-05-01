@@ -11,7 +11,7 @@ exports.saveImage = async (req, res, next) => {
   let extension = "." + mimetype.split("/")[1];
   let image = {
     adId: req.body.adId,
-    path: "http://localhost:3001/" + path //put prefix as env.variable
+    path: "https://el-vocero-back.herokuapp.com" + path //put prefix as env.variable
   };
   let newImage = new db.Image(image);
   res.send(await newImage.save());
