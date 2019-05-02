@@ -14,6 +14,12 @@ exports.getMessagesBetweenTwo = async (req, res) => {
 exports.getMessages = async (req, res) => {
   let { userId } = req.params;
   let messages = await db.Message.find({ receiverId: userId });
+  messages.map(message => {
+    return {
+      from: await db.User.findById({_id: message.senderId}),
+      text: message.text
+    }
+  })
   res.send(messages);
 };
 exports.sendMessage = async (req, res) => {
