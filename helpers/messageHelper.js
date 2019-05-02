@@ -25,7 +25,12 @@ exports.getMessages = async (req, res) => {
   res.send(list);
 };
 exports.sendMessage = async (req, res) => {
-  let newMessage = new db.Message(req.body);
+  let { senderId, receiverId, text } = req.body;
+  let sender = await db.User.findById({ _id: senderId });
+  let message = _.pick(req.body, ["timestamp", "text", "receiverId"]);
+  message.sender = sender;
+
+  let newMessage = new db.Message(message);
   await newMessage.save();
   res.send({ message: "Message sent sucessfully", text: newMessage });
 };
