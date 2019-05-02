@@ -28,7 +28,8 @@ exports.createAd = async (req, res) => {
     "description",
     "imagePath",
     "status",
-    "active"
+    "active",
+    "category"
   ]);
   ad.user = _.pick(user, [
     "_id",
