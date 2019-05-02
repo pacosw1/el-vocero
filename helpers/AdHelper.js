@@ -20,13 +20,10 @@ exports.getAd = async (req, res) => {
 };
 
 exports.createAd = async (req, res) => {
-  let { userId } = req.body;
-  let user = await db.User.findById({ _id: userId });
   let ad = _.pick(req.body, [
     "title",
     "price",
     "description",
-    "imagePath",
     "status",
     "active",
     "category"
