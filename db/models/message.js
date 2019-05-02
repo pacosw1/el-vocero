@@ -3,9 +3,9 @@ var mongoose = require("mongoose");
 var type = mongoose.Schema.Types;
 
 var messageSchema = new mongoose.Schema({
-  senderId: {
-    type: type.ObjectId,
-    required: "sender required"
+  sender: {
+    _id: type.ObjectId,
+    username: type.String
   },
   receiverId: {
     type: type.ObjectId,
