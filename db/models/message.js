@@ -15,6 +15,10 @@ var messageSchema = new mongoose.Schema({
     type: type.String,
     required: "A text message is required"
   },
+  adId: {
+    type: type.String,
+    required: "true"
+  },
   timeStamp: {
     type: type.Date,
     default: Date.now()

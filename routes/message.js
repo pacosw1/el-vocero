@@ -3,9 +3,8 @@ var router = express.Router();
 var multer = require("multer");
 let helpers = require("../helpers/messageHelper");
 
-router
-  .route("/")
-  .get(helpers.getMessages)
-  .post(helpers.sendMessage);
+router.route("/").post(helpers.sendMessage);
+
+router.route("/:userId", helpers.getMessages);
 
 module.exports = router;
