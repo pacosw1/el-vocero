@@ -42,6 +42,7 @@ app.use("/images", imagesRoute);
 app.use("/categories", categoryRoute);
 app.use("/favorites", favoriteRoute);
 app.use("/locations", locationRoute);
+app.use("/messages", messageRoute);
 app.use("/auth", authRoute);
 
 // app.use("/messages", messageRoute);
