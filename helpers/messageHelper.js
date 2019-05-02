@@ -11,7 +11,12 @@ exports.getMessagesBetweenTwo = async (req, res) => {
   else res.status(200).send(items);
 };
 
-exports.createMessage = async (req, res) => {
+exports.getMessages = async (req, res) => {
+  let { receiverId } = req.body;
+  let messages = await db.Message.find({ receiverId: receiverId });
+  res.send(messages);
+};
+exports.sendMessage = async (req, res) => {
   let newMessage = new db.Message(req.body);
   await newMessage.save();
   res.send({ message: "Message sent sucessfully", text: newMessage });

@@ -5,7 +5,7 @@ let helpers = require("../helpers/messageHelper");
 
 router
   .route("/")
-  .get(helpers.getMessagesBetweenTwo)
-  .post(helpers.createMessage);
+  .get(helpers.getMessages)
+  .post(helpers.sendMessage);
 
 module.exports = router;
