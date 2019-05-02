@@ -27,7 +27,7 @@ exports.getMessages = async (req, res) => {
 exports.sendMessage = async (req, res) => {
   let { senderId, receiverId, text } = req.body;
   let sender = await db.User.findById({ _id: senderId });
-  let message = _.pick(req.body, ["timestamp", "text", "receiverId"]);
+  let message = _.pick(req.body, ["timeStamp", "text", "receiverId"]);
   message.sender = sender;
 
   let newMessage = new db.Message(message);
