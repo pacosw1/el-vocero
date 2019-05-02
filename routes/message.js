@@ -5,6 +5,6 @@ let helpers = require("../helpers/messageHelper");
 
 router.route("/").post(helpers.sendMessage);
 
-router.route("/:userId", helpers.getMessages);
+router.route("/:userId").get(helpers.getMessages);
 
 module.exports = router;
