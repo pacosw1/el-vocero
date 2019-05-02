@@ -15,10 +15,12 @@ exports.getMessages = async (req, res) => {
   let { userId } = req.params;
   let messages = await db.Message.find({ receiverId: userId });
   messages.map(message => {
-    return {
-      from: await db.User.findById({_id: message.senderId}),
+    let from = await db.User.findById({_id: message.senderId})
+    let obj = {
+      from: from.data,
       text: message.text
     }
+    return obj
   })
   res.send(messages);
 };
