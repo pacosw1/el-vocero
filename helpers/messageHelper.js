@@ -1,5 +1,5 @@
 let db = require("../db/db-connect");
-
+let _ = require("lodash");
 exports.getMessagesBetweenTwo = async (req, res) => {
   let { receiver, sender } = req.body;
   let messages = await db.Message.find({
