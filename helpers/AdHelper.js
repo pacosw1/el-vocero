@@ -26,6 +26,7 @@ exports.createAd = async (req, res) => {
     "description",
     "status",
     "active",
+    "user",
     "category"
   ]);
   ad.user = _.pick(user, [
